@@ -4,19 +4,43 @@
     <link rel="stylesheet" type="text/css" href="JasonInlog.css">
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+   
+   <script type="text/javascript">   
+      function linkDB() {
+      var xmlhttp = new XMLHttpRequest();
+      var user_name = document.getElementById("gn");
+      var password = document.getElementById("ww");
+      var gebruiker = {};
+      
+      gebruiker.gebruikersnaam = user_name.value;
+      gebruiker.wachtwoord = password.value;
+      var jsons = JSON.stringify(gebruiker);
+      console.log(jsons);
+      xhttp.onreadystatechange = function() {
+          console.log(this.readyState + this.status);
+         if (this.readyState == 4 && this.status == 200) {
+           console.log("Ready");
+           console.log(this.responseText);
+      
+         }
+      };
+  xhttp.open("POST", "http://localhost:8082/api/login/check", true);
+  xhttp.setRequestHeader ("content-type", "application/json");
+  xhttp.send(jsons);
+  }
+</script>
         <body> 
                 <div class="boxje">
                         <img src="http://www.qien.nl/wp-content/uploads/2017/10/logo.svg" alt="Logo" height="100" width="100">
                             <h3>Welkom bij de CV Dokter</h3>	
         <form>
         <center>
+          <form action="admin.html">
           Gebruikersnaam:<input type="text" name="gebruikersnaam" placeholder="gebruikersnaam" id="gn"><br>
           Wachtwoord: <input type="text" name="wachtwoord" placeholder="wachtwoord" id="ww"><br><br>
           
           <p class="indent1"></p>
-          <form action="admin.html">
-          <input type="submit" value="Aanmelden" id="aanmeld">
+          <input type="submit"  onclick="linkDB()" value="Aanmelden" id="aanmeld">
           </form>
           <input type="button2" onclick = "vergeten" value="Wachtwoord vergeten?" id="wwv">
         </center>

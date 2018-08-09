@@ -2,6 +2,27 @@
 <head>
 <title>AdminMenu</title>
 
+<script type="text/javascript">   
+    function maakGebruiker() {
+      var xmlhttp2 = new XMLHttpRequest();
+      var nieuweGebruiker = document.setElementById("gn");
+      var gebruiker = {};
+      gebruiker.gebruikersnaam = inlogGebruiker.value;
+      
+      var jsons = JSON.stringify(gebruiker);
+      xhttp.onreadystatechange = function() {
+          console.log(this.readyState + this.status);
+         if (this.readyState == 4 && this.status == 200) {
+           console.log("Ready");
+           console.log(this.responseText);
+      
+         }
+      };
+  xhttp2.open("POST", "http://localhost:8889/api/gebruiker", true);
+  xhttp2.setRequestHeader ("content-type", "application/json");
+  xhttp2.send(jsons);
+  }
+</script>
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="admin.css">
 	</head>
@@ -32,7 +53,8 @@
         <p>Vul hieronder de naam in:<br></p>
         
         Nieuwe gebruiker:<input type="text" name="gebruiker" placeholder="gebruiker" id="gn"><br>
-        <input type="submit" name="Knop" value="Gebruiker aanmaken"><br>
+        <form action="registratie.html"><input type="submit" name="Knop" value="Gebruiker aanmaken"><br>
+        </form>
         </div>
 		
 		
