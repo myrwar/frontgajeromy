@@ -1,0 +1,35 @@
+    <script type="text/javascript">   
+
+
+            function linkDB() {
+                var xmlhttp = new XMLHttpRequest();
+                var inlogGebruiker = document.getElementById("gn");
+                var inlogWacht = document.getElementById("ww");
+                var gebruiker = {};
+                gebruiker.gebruikersnaam = inlogGebruiker.value;
+                gebruiker.wachtwoord = inlogWacht.value;
+                var jsons = JSON.stringify(gebruiker);
+                xhttp.onreadystatechange = function() {
+                    console.log(this.readyState + this.status);
+                   if (this.readyState == 4 && this.status == 200) {
+                     console.log("Ready");
+                     console.log(this.responseText);
+                <button onclick="window.location.href='/page2'"></button>
+                
+                   }
+                };
+            xhttp.open("POST", "http://localhost:8889/");
+			xhttp.setRequestHeader ("content-type", "application/json");
+            xhttp.send(jsons);
+            }
+
+            function error() {
+
+            }
+
+             onclick="linkDB()"
+
+
+
+
+            </script>

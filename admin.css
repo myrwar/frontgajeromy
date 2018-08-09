@@ -1,0 +1,38 @@
+.header {
+    background-color: #640080;
+    text-align: left;
+    padding: 10px;
+}
+
+
+#main {
+    text-align: center;
+    float:right;
+    width:85%;
+    background:white;
+    }
+
+#sidebar {
+    float:left;
+    width:15%;
+    background: #640080;
+    }
+
+
+#footer {
+        clear:both;
+        background:#640080;
+        }
+    
+
+/*.sidebar{
+    float: left;
+    width: 30%;
+    background-color: #640080;
+    padding-right: 20px;
+    
+}
+
+.main{
+    width: 70%;
+}*/
