@@ -1,39 +1,37 @@
 <html>
-<head>
-<title>AdminMenu</title>
 
-<script type="text/javascript">   
-    function maakGebruiker() {
-      var xmlhttp2 = new XMLHttpRequest();
-      var nieuweGebruiker = document.setElementById("gn");
-      var gebruiker = {};
-      gebruiker.gebruikersnaam = inlogGebruiker.value;
-      
-      var jsons = JSON.stringify(gebruiker);
-      xhttp.onreadystatechange = function() {
-          console.log(this.readyState + this.status);
-         if (this.readyState == 4 && this.status == 200) {
-           console.log("Ready");
-           console.log(this.responseText);
-      
-         }
-      };
-  xhttp2.open("POST", "http://localhost:8889/api/gebruiker", true);
-  xhttp2.setRequestHeader ("content-type", "application/json");
-  xhttp2.send(jsons);
-  }
-</script>
-    <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="admin.css">
-	</head>
-	<body>
-		<div id="wrap">
-		<div class="header">
-		<h1 style="color:white";><img src="http://www.qien.nl/wp-content/uploads/2017/10/logo.svg" alt="">
-		</a>Welkom op de adminpagina</h1>
-			
-	  </div>
-<body>
+<title>AdminMenu</title>
+<head>
+        <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="admin.css">
+        </head>
+
+        <script type="text/javascript">   
+            function nieuweGebruiker() {
+            var xhttp = new XMLHttpRequest();
+            var gebruiker = document.getElementById("gnNieuw");
+            //var gebruiker.setEmailadres = document.setElementById("e-mail");
+            var nieuw = {};
+            
+            nieuw.gebruiker = gebruiker.value;
+            var jsons = JSON.stringify(nieuw);
+            console.log(jsons);
+            xhttp.onreadystatechange = function() {
+              console.log("Readystates: " + this.readyState + "States: " +  this.status);
+               if (this.readyState == 4 && this.status == 202) {
+                 console.log("Ready");
+                 console.log(this.responseText);
+               }
+            };
+        
+            xhttp.open("POST", "http://localhost:8082/api/gebruiker", true);
+            xhttp.setRequestHeader ("Content-type", "application/json");
+            console.log(jsons);
+            xhttp.send(jsons);
+        }
+        </script>
+    
+        <body>
 		<div id="sidebar">
 		<h3 style="color:white";>Menu</h3>
 		<input type="submit" name="Knop" value="Gebruiker aanmaken"><br>
@@ -47,21 +45,21 @@
 </body>
 
 <body>
-		<div id="main">
-        <center>
-        <h3>U wilt een nieuwe gebruiker toevoegen?</h3>
-        <p>Vul hieronder de naam in:<br></p>
-        
-        Nieuwe gebruiker:<input type="text" name="gebruiker" placeholder="gebruiker" id="gn"><br>
-        <form action="registratie.html"><input type="submit" name="Knop" value="Gebruiker aanmaken"><br>
-        </form>
-        </div>
+        <h4>Wilt u een nieuwe gebruiker toevoegen?</h4>
+        <p>Voor hieronder de gewenste gebruikersnaam en het juiste e-mailadres in:</p>
+        <form action="admin.html">
+                Gebruikersnaam:<input type="text" name="gebruikersnaam" placeholder="gebruikersnaam" id="gnNieuw"><br>
+                E-mailadres: <input type="text" name="e-mailadres" placeholder="e-mailadres" id="e-mail"><br><br>
+                <p class="indent1"></p>
+                <input type="submit"  onclick="nieuweGebruiker()" value="Aanmaken" id="aanmaak">
+                </form>
 		
 		
 
 		<div id="footer">
 				<p>Footer</p>
 				</div>
+				</body>
 </div>
 </body>
 </html>

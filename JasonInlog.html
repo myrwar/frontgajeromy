@@ -7,13 +7,13 @@
    
    <script type="text/javascript">   
       function linkDB() {
-      var xmlhttp = new XMLHttpRequest();
-      var user_name = document.getElementById("gn");
+      var xhttp = new XMLHttpRequest();
+      var userName = document.getElementById("gn");
       var password = document.getElementById("ww");
       var gebruiker = {};
       
-      gebruiker.gebruikersnaam = user_name.value;
-      gebruiker.wachtwoord = password.value;
+      gebruiker.userNAme = userName.value;
+      gebruiker.password = password.value;
       var jsons = JSON.stringify(gebruiker);
       console.log(jsons);
       xhttp.onreadystatechange = function() {
@@ -31,7 +31,7 @@
 </script>
         <body> 
                 <div class="boxje">
-                        <img src="http://www.qien.nl/wp-content/uploads/2017/10/logo.svg" alt="Logo" height="100" width="100">
+                        <img src="http://www.qien.nl/wp-content/uploads/2017/10/logo.svg" alt="Logo" height="150" width="150">
                             <h3>Welkom bij de CV Dokter</h3>	
         <form>
         <center>
@@ -49,3 +49,4 @@
 </body>
 </head>
 </html>
+
