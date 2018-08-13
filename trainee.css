@@ -1,0 +1,26 @@
+.header {
+    background-color:#640080;
+    text-align: center;
+    padding: 10px;
+}
+
+
+#main {
+    text-align: center;
+    float:right;
+    width:85%;
+    background:white;
+    }
+
+#sidebar {
+    float:left;
+    width:15%;
+    height:100%;
+    background: #640080;
+    }
+
+
+#footer {
+        clear:both;
+        background:#640080;
+        }
