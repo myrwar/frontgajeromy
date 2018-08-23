@@ -1,0 +1,31 @@
+
+<title>Loginpagina</title>
+<link rel="stylesheet" type="text/css" href="poging2.css">
+<link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+	
+	<form #LoginForm="ngForm">
+
+		<div class="boxje">
+			<img src="http://www.qien.nl/wp-content/uploads/2017/10/logo.svg" alt="Logo" height="150" width="150">
+			<h3>Welkom bij de CV Dokter</h3>	
+
+		
+			<label for="name">Gebruikersnaam</label>
+			<br><input type="text" class="form-control" id="name" required   name="gebruikersnaam" placeholder="gebruikersnaam" (keyup) = "onKey($event)"><br>
+
+
+			<label for = "wachtwoord">Wachtwoord</label>
+			<br><input type="password" class="form-control" id="wachtwoord" placeholder="wachtwoord" required (keyup) = "onKeyww($event)">
+
+            <br><button type="submit" class="button" (click)="onClick($event)"> Login</button>
+            <br>
+            <br>
+			<input type="checkbox" onclick="wachtwoordZien()">wachtwoord tonen
+           
+		</div>
+
+	</form>
+
+
+<div class = "avatar">
+</div>
